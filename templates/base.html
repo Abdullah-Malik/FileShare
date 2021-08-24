@@ -1,0 +1,20 @@
+{% load static %}
+
+
+</div>
+<!-- Navbar Right Side -->
+
+<a class="nav-item nav-link" href="{% url 'Posts-home' %}">Home</a>
+
+{% if user.is_authenticated %}
+    <a class="nav-item nav-link" href="{% url 'Posts-dashboard' %}">Dashboard</a>
+    <a class="nav-item nav-link" href="{% url 'profile' user.username %}">Profile</a>
+    <a class="nav-item nav-link" href="{% url 'Posts-create' %}">New Post</a>
+    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+    <p>Welcome {{user.username}}!</p>
+{% else %}
+    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+    <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
+{% endif %}
+{% block content %}{% endblock %}
+            
