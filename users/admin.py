@@ -3,7 +3,4 @@ from django.contrib.auth.admin import UserAdmin
 from .models import User
 
 admin.site.register(User, UserAdmin)
-
-fieldsets = UserAdmin.fieldsets + (
-    (None, {'fields': ('image',)}),
-)
+UserAdmin.fieldsets += ('Custom fields set', {'fields': ('image',)}),
