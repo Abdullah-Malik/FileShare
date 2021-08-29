@@ -32,7 +32,7 @@ def signup(request):
     return render(request, "users/signup.html", context)
 
 
-def index():
+def index(request):
     """
     Index view
     """

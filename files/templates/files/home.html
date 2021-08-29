@@ -1,0 +1,9 @@
+{% for file in files %}
+    <h1>{{file.title}}</h1>
+    <p> by {{ file.owner.username }}</p>
+    <small class="text-muted">{{ file.date_posted|date:"F d, Y" }}</small>
+    <p>{{file.description}}</p>
+    <img src="{{ file.thumbnail_image.url }}">
+     <a href="{{ file.uploaded_file.url }}" download  class="btn btn-dark float-right">Download</a>
+   <hr>
+{% endfor %}

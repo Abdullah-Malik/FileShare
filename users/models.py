@@ -23,7 +23,7 @@ class User(AbstractUser):
         Return:
             it returns the username of particular instance of User object
         """
-        return f"{AbstractUser.username} Profile"
+        return f"{self.username} Profile"
 
     def save(self, *args, **kwargs):
         """
